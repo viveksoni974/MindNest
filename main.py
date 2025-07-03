@@ -4,7 +4,8 @@ import sqlite3
 import os
 
 app = Flask(__name__)
-sentiment_model = pipeline("sentiment-analysis")
+# sentiment_model = pipeline("sentiment-analysis")
+sentiment_Model = pipeline("sentiment-analysis", model="distilbert-base-uncased-finetuned-sst-2-english")
 
 def init_db():
     if not os.path.exists('journal.db'):
